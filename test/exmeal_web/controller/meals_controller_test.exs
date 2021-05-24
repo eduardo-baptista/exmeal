@@ -3,7 +3,7 @@ defmodule Exmeal.MealsControllerTest do
 
   describe "create/2" do
     test "when all params are valid, creates a meal", %{conn: conn} do
-      params = %{description: "Banana", date: "2001-05-02", calories: "20"}
+      params = %{description: "Banana", date: "2021-05-24T22:00:00Z", calories: "20"}
 
       response =
         conn
@@ -12,12 +12,10 @@ defmodule Exmeal.MealsControllerTest do
 
       assert %{
                "meal" => %{
-                 "meal" => %{
-                   "calories" => 20,
-                   "date" => "2001-05-02",
-                   "description" => "Banana",
-                   "id" => _id
-                 }
+                 "calories" => 20,
+                 "date" => "2021-05-24T22:00:00Z",
+                 "description" => "Banana",
+                 "id" => _id
                },
                "message" => "Meal created!"
              } = response
