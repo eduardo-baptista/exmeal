@@ -1,4 +1,6 @@
 defmodule Exmeal.Error do
+  alias Ecto.Changeset
+
   @keys [:status, :result]
   @enforce_keys @keys
 
@@ -9,5 +11,9 @@ defmodule Exmeal.Error do
       status: status,
       result: result
     }
+  end
+
+  def build_changeset_error(%Changeset{} = changeset) do
+    build(:bad_request, changeset)
   end
 end
