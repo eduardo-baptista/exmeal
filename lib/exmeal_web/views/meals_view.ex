@@ -9,4 +9,10 @@ defmodule ExmealWeb.MealsView do
       meal: meal
     }
   end
+
+  def render("meal.json", %{meal: %Meal{} = meal}) do
+    %{
+      meal: meal
+    }
+  end
 end

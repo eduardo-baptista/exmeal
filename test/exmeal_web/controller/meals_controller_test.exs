@@ -69,7 +69,7 @@ defmodule Exmeal.MealsControllerTest do
 
   describe "update/2" do
     test "when id exist, update the meal", %{conn: conn} do
-      params = %{description: "Banana", date: "2001-05-02", calories: "20"}
+      params = %{description: "Banana", date: "2021-05-24T22:00:00Z", calories: "20"}
 
       {:ok, meal} = Exmeal.create_meal(params)
 
@@ -83,7 +83,7 @@ defmodule Exmeal.MealsControllerTest do
       assert %{
                "meal" => %{
                  "calories" => 20,
-                 "date" => "2001-05-02",
+                 "date" => "2021-05-24T22:00:00Z",
                  "description" => "Banana",
                  "id" => _id
                }
