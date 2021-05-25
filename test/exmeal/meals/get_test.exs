@@ -5,7 +5,7 @@ defmodule Exmeal.Meals.GetTest do
     test "when a valid id is given, returns the meal" do
       params = %{
         calories: 20,
-        date: ~D[2001-05-02],
+        date: "2021-05-24T22:00:00Z",
         description: "Banana"
       }
 
@@ -16,7 +16,7 @@ defmodule Exmeal.Meals.GetTest do
       assert {:ok,
               %Exmeal.Meal{
                 calories: 20,
-                date: ~D[2001-05-02],
+                date: ~U[2021-05-24 22:00:00Z],
                 description: "Banana",
                 id: _id
               }} = response
