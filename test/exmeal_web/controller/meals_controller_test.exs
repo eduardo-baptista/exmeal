@@ -39,7 +39,7 @@ defmodule Exmeal.MealsControllerTest do
 
   describe "delete/2" do
     test "when id exist, delete the meal", %{conn: conn} do
-      params = %{description: "Banana", date: "2001-05-02", calories: "20"}
+      params = %{description: "Banana", date: "2021-05-24T22:00:00Z", calories: "20"}
 
       {:ok, meal} = Exmeal.create_meal(params)
 
