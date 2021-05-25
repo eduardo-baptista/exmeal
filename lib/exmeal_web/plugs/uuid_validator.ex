@@ -4,10 +4,12 @@ defmodule ExmealWeb.Plugs.UUIDValidator do
   alias Plug.Conn
   @behaviour Plug
 
+  # coveralls-ignore-start
   @impl true
   def init(options), do: options
+  # coveralls-ignore-stop
 
-  def call(%Conn{path_params: %{"id" => id}} = conn, _options) do
+  def call(%Conn{params: %{"id" => id}} = conn, _options) do
     case UUID.cast(id) do
       :error -> render_error(conn)
       {:ok, _uuid} -> conn
