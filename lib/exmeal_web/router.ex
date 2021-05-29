@@ -10,7 +10,7 @@ defmodule ExmealWeb.Router do
   scope "/api", ExmealWeb do
     pipe_through :api
 
-    resources "/meals", MealsController, except: [:new, :edit]
+    resources "/meals", MealsController, except: [:new, :edit, :index]
   end
 
   # Enables LiveDashboard only for development
