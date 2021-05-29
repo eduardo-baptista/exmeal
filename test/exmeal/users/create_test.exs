@@ -20,9 +20,9 @@ defmodule Exmeal.Users.CreateTest do
       assert {:ok,
               %User{
                 id: _id,
-                cpf: cpf,
-                email: email,
-                name: name
+                cpf: ^cpf,
+                email: ^email,
+                name: ^name
               }} = result
     end
 
